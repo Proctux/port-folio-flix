@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #141414;
+  --red-500: #e50914;
+  --header-size: 6.8rem;
+  --body-size: calc(100vh - var(--header-size));
+}
+
+html {
+  font-size: 10px;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  color: white;
+  background-color: var(--background);
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font: 400 1rem 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
