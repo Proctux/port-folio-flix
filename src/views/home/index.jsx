@@ -1,16 +1,37 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import StackLinkCard from 'components/stacks-link-card'
+import MobileDevelopment from 'assets/images/mobile-development.png'
+import WebDevelopment from 'assets/images/web-development.png'
+import BackendDevelopment from 'assets/images/backend-development.jpeg'
 
 import styles from './styles.module.scss'
+
+const stackCards = [
+  {
+    name: "mobile",
+    image: MobileDevelopment,
+    link: '/mobile'
+  },
+  {
+    name: "web",
+    image: WebDevelopment,
+    link: '/web'
+  },
+  {
+    name: "backend",
+    image: BackendDevelopment,
+    link: '/backend'
+  }
+]
 
 const Home = () => {
   return (
     <section className={styles['home-container']}>
-      <h1>What of my stacks portfolios you'd like to have a look at?</h1>
+      <h1 className={styles['home-title']}>Which of these stacks would you like to take a look at?</h1>
       <div className={styles['stacks-container']}>
-        <Link to="/web">Web</Link>
-        <Link to="/mobile">Mobile</Link>
-        <Link to="/backend">Backend</Link>
+        {stackCards.map(stack => (
+          <StackLinkCard key={stack.name} name={stack.name} image={stack.image} link={stack.link} />
+        ))}
       </div>
     </section>
   )

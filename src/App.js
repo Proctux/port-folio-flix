@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Header from 'components/header'
+
 import './global.css'
 
 const App = ({ children }) => {
   return (
-    <main>{children}</main>
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
   )
 }
 
